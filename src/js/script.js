@@ -179,12 +179,8 @@
               imageAvailable.classList.add(classNames.menuProduct.imageVisible);
             }
 
-            if(option.default == true){                 //option is default
-              console.log('Price stays the same');
-            }
-            else{                                       //option is not default
-              console.log('Add price: ', option.price);
-              price = price + option.price;
+            if(!option.default){                 //option is not default
+              price += option.price;
             }
           }
           else{                                       //option not included in formData
@@ -195,12 +191,8 @@
               imageAvailable.classList.remove(classNames.menuProduct.imageVisible);
             }
 
-            if(option.default == true){                 //option is default
-              console.log('Substruct price: ', option.price);
-              price = price - option.price;
-            }
-            else{                                       //option is not default
-              console.log('Price stays the same');
+            if(option.default){                 //option is default
+              price -= option.price;
             }
           }
         }
