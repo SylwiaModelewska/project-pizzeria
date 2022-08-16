@@ -93,6 +93,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
 
       //console.log('accordionTrigger: ', thisProduct.accordionTrigger);
       //console.log('form: ', thisProduct.form);
@@ -165,11 +166,18 @@
           const option = param.options[optionId];
           //console.log('optionId i option: ', optionId, option);
 
-          console.log('includes: ', optionId, paramId, formData[paramId].includes(optionId));
+          //console.log('includes: ', optionId, paramId, formData[paramId].includes(optionId));
+          
+          //image available for option
+          const imageAvailable = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          console.log('imageAvailable: ', imageAvailable);
           
           if(formData[paramId].includes(optionId)){   //option included in formData
-            console.log('Included');
-            console.log('default: ', option.default);
+            //console.log('Included');
+            //console.log('default: ', option.default);
+            if (imageAvailable != null){
+              imageAvailable.classList.add(classNames.menuProduct.imageVisible);
+            }
 
             if(option.default == true){                 //option is default
               console.log('Price stays the same');
@@ -180,8 +188,12 @@
             }
           }
           else{                                       //option not included in formData
-            console.log('Not included');
-            console.log('default: ', option.default);
+            //console.log('Not included');
+            //console.log('default: ', option.default);
+
+            if (imageAvailable != null){
+              imageAvailable.classList.remove(classNames.menuProduct.imageVisible);
+            }
 
             if(option.default == true){                 //option is default
               console.log('Substruct price: ', option.price);
