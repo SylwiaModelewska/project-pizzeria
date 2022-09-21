@@ -116,6 +116,8 @@ class Booking{
   
       thisBooking.booked[date][hourBlock].push(table);
     }
+
+    thisBooking.updateDOM();
   }
 
   updateDOM(){
@@ -256,11 +258,18 @@ class Booking{
     payload.starters = [];
 
     for(let starter of thisBooking.dom.starters){
-      if(starter.checked){
+      if(starter.checked && starter.value == 'bread'){
+        if(!payload.starters.includes('water')){
+          payload.starters.push('water');
+        }
+        payload.starters.push(starter.value);
+      }
+      else if(starter.checked && starter.value == 'water'){
         payload.starters.push(starter.value);
       }
     }
 
+    //console.log('Starters in payload', payload.starters);
     //console.log(payload);
 
     const url = settings.db.url + '/' + settings.db.bookings;
@@ -282,7 +291,7 @@ class Booking{
         thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
       });
 
-    console.log('bookings: ', thisBooking.booked);
+    //console.log('bookings: ', thisBooking.booked);
   }
 
 }
