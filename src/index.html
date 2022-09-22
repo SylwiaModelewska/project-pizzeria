@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pizzeria</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
@@ -78,14 +79,14 @@
   <script id="template-home" type="text/x-handlebars-template">
     <div class="info-tiles">
       <div class="link-tiles">
-        <div class="tile-order">
-          <a href="#order">
+        <div class="tile-order link-tile">
+          <a href="#order" id="order-link">
             <h2>ORDER ONLINE</h2>
             <p>Delicious food delivered to your door</p>
           </a>
         </div>
-        <div class="tile-book">
-          <a href="#booking">
+        <div class="tile-book link-tile">
+          <a href="#booking" id="book-link">
             <h2>BOOK A TABLE</h2>
             <p>Book a table in our restaurant</p>
           </a>
@@ -139,7 +140,64 @@
       </div>
     </div>
     <div class="img-gallery">
-
+      <div class="gallery-row">
+        <div class="gallery-cell">
+          <div class="img-box">
+            <img src="https://i.postimg.cc/GpTnmWN8/pizza-4.jpg" alt="plates">
+          </div>
+          <div class="icon-box">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+        <div class="gallery-cell">
+          <div class="img-box">
+            <img src="https://i.postimg.cc/kgxxPGMB/pizza-5.jpg" alt="salad">
+          </div>
+          <div class="icon-box">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+        <div class="gallery-cell">
+          <div class="img-box">
+            <img src="https://i.postimg.cc/gJ0RhKVZ/pizza-6.jpg" alt="pizza-slices">
+          </div>
+          <div class="icon-box">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-row">
+        <div class="gallery-cell">
+          <div class="img-box">
+            <img src="https://i.postimg.cc/BbKj57XX/pizza-7.jpg" alt="open-sign">
+          </div>
+          <div class="icon-box">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+        <div class="gallery-cell">
+          <div class="img-box">
+            <img src="https://i.postimg.cc/1tL0wjyj/pizza-8.jpg" alt="hands">
+          </div>
+          <div class="icon-box">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+        <div class="gallery-cell">
+          <div class="img-box">
+            <img src="https://i.postimg.cc/JnBZr5jc/pizza-9.jpg" alt="window">
+          </div>
+          <div class="icon-box">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+      </div>
     </div>
     <footer class="footer">
       <a href="#">View more on Instagram</a>

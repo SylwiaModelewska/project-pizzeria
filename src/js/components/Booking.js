@@ -116,8 +116,6 @@ class Booking{
   
       thisBooking.booked[date][hourBlock].push(table);
     }
-
-    thisBooking.updateDOM();
   }
 
   updateDOM(){
@@ -289,6 +287,7 @@ class Booking{
       }).then(function(parsedResponse){
         console.log('parsedResponse: ', parsedResponse);
         thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
+        thisBooking.updateDOM();
       });
 
     //console.log('bookings: ', thisBooking.booked);
